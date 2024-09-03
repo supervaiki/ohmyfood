@@ -122,32 +122,27 @@ header {
 }
 .tuto {
   counter-reset: steps;
+  margin-bottom: 2rem;
 }
 .tuto ol {
   display: flex;
   gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .tuto ol {
-    flex-direction: columns;
+    flex-direction: column;
   }
 }
 .tuto li {
   position: relative;
+  display: flex;
+  align-items: center;
   list-style-type: none;
   background-color: #f6f6f6;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   flex-grow: 1;
-  border: 1rem;
-  border-radius: 1.5rem;
-  /*@include mixins.base-shadown;*/
-}
-.tuto li:hover {
-  transform: scale(1.02);
-  background-color: #f2eafb;
-}
-.tuto li:hover i::before {
-  color: #9356dc;
+  border-radius: 1rem;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
 }
 .tuto li::before {
   content: counter(steps);
@@ -160,13 +155,21 @@ header {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 1rem;
+  top: 50%;
   left: -1rem;
-  transform: translate(-50%);
+  transform: translateY(-50%);
 }
-.tuto li i {
-  color: gray;
+.tuto li:hover {
+  transform: scale(1.02);
+  background-color: #f2eafb;
+}
+.tuto li:hover i::before {
+  color: #9356dc;
+}
+.tuto li i.fas {
   margin-right: 1rem;
+  color: #7e7e7e;
+  font-size: 1.5rem;
 }
 
 #homepage .menus {
